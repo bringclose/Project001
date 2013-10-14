@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Speaker1;
 
 namespace Speaker
 {
@@ -18,7 +19,8 @@ namespace Speaker
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReadFromFile.ReadingText();
+            //ReadFromFile.ReadingText();
+            Speaker1.ReadFromFile.ReadingText();
         }
     }
 }
