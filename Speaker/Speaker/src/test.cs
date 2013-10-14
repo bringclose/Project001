@@ -11,6 +11,10 @@ namespace Speaker1
             System.Console.WriteLine("Contents of WriteText.txt = {0} - {0}", text, text);
         }
 
+        public static string sReadingText()
+        {
+            return System.IO.File.ReadAllText(dataFile + @".\data.dat"); ;
+        }
         /*private byte[] DiphConcat(string word, string lpszF1, string lpszF2, ref int sampnum)
         {
             string DataPath = Application.StartupPath + @"\tên thư mục dữ liệu\";
