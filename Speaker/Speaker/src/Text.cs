@@ -19,38 +19,93 @@ namespace Speaker.src
             return Regex.Replace(sText, @"\s+", " ").Trim();
         }
 
-        public static string TrimWhitespaceAnd(string inputString, params char[] characters)
+        public static string TrimWhitespaceAnd(string sText, params char[] characters)
         {
             int start = 0;
-            while (start < inputString.Length)
+            while (start < sText.Length)
             {
-                if (!char.IsWhiteSpace(inputString[start]) &&
-                        !characters.Contains(inputString[start]))
+                if (!char.IsWhiteSpace(sText[start]) &&
+                        !characters.Contains(sText[start]))
                 {
                     break;
                 }
                 start++;
             }
-            int end = inputString.Length - 1;
+            int end = sText.Length - 1;
             while (end >= start)
             {
-                if (!char.IsWhiteSpace(inputString[end]) &&
-                        !characters.Contains(inputString[end]))
+                if (!char.IsWhiteSpace(sText[end]) &&
+                        !characters.Contains(sText[end]))
                 {
                     break;
                 }
                 end--;
             }
             int length = (end - start) + 1;
-            if (length == inputString.Length)
+            if (length == sText.Length)
             {
-                return inputString;
+                return sText;
             }
             if (length == 0)
             {
                 return string.Empty;
             }
-            return inputString.Substring(start, length);
+            return sText.Substring(start, length);
+        }
+
+        public static string sReplaceUTF8(string sText)
+        {
+            char[] cAccents = {   'á', 'à', 'ả', 'ã', 'ạ'
+                                , 'â', 'ă'
+                                , 'ấ', 'ầ', 'ẩ', 'ẫ', 'ậ'
+                                , 'ắ', 'ằ', 'ẳ', 'ẵ', 'ặ'
+
+                                , 'é', 'è', 'ẻ', 'ẽ', 'ẹ'
+                                , 'ê'
+                                , 'ế', 'ề', 'ể', 'ễ', 'ệ'
+
+                                , 'ú', 'ù', 'ủ', 'ũ', 'ụ'
+                                , 'ư'
+                                , 'ứ', 'ừ', 'ử', 'ữ', 'ự'
+
+                                , 'í', 'ì', 'ỉ', 'ĩ', 'ị'
+
+                                , 'ó', 'ò', 'ỏ', 'õ', 'ọ'
+                                , 'ô', 'ơ'
+                                , 'ố', 'ồ', 'ổ', 'ỗ', 'ộ'
+                                , 'ớ', 'ờ', 'ở', 'ỡ', 'ợ'
+
+                                , 'đ'
+                             };
+
+            char[] cReplace = {   'a', 'a', 'a', 'a', 'a'
+                                , 'a', 'a'
+                                , 'a', 'a', 'a', 'a', 'a'
+                                , 'a', 'a', 'a', 'a', 'a'
+
+                                , 'e', 'e', 'e', 'e', 'e'
+                                , 'e'
+                                , 'e', 'e', 'e', 'e', 'e'
+
+                                , 'u', 'u', 'u', 'u', 'u'
+                                , 'u'
+                                , 'u', 'u', 'u', 'u', 'u'
+
+                                , 'i', 'i', 'i', 'i', 'i'
+
+                                , 'o', 'o', 'o', 'o', 'o'
+                                , 'o', 'o'
+                                , 'o', 'o', 'o', 'o', 'o'
+                                , 'o', 'o', 'o', 'o', 'o'
+
+                                , 'd'
+                             };
+
+            for (int i = 0; i < cAccents.Length; i++)
+            {
+                sText = sText.Replace(cAccents[i], cReplace[i]);
+            }
+            return sText;
         }
     }
 }
