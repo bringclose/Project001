@@ -13,7 +13,7 @@ namespace Speaker1
 
         public static string sReadingText()
         {
-            return System.IO.File.ReadAllText(dataFile + @".\data.dat"); ;
+            return System.IO.File.ReadAllText(dataFile + @".\data.dat");
         }
         /*private byte[] DiphConcat(string word, string lpszF1, string lpszF2, ref int sampnum)
         {

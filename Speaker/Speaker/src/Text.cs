@@ -78,32 +78,31 @@ namespace Speaker.src
                                 , 'đ'
                              };
 
-            char[] cReplace = {   'a', 'a', 'a', 'a', 'a'
-                                , 'a', 'a'
-                                , 'a', 'a', 'a', 'a', 'a'
-                                , 'a', 'a', 'a', 'a', 'a'
+            string[] cReplace = {   "as", "af", "ar", "ax", "aj"
+                                , "aa", "aw"
+                                , "aas", "aaf", "aar", "aax", "aaj"
+                                , "aws", "awf", "awr", "awx", "awj"
 
-                                , 'e', 'e', 'e', 'e', 'e'
-                                , 'e'
-                                , 'e', 'e', 'e', 'e', 'e'
+                                , "es", "ef", "er", "ex", "ej"
+                                , "ee"
+                                , "ees", "eef", "eer", "eex", "eej"
 
-                                , 'u', 'u', 'u', 'u', 'u'
-                                , 'u'
-                                , 'u', 'u', 'u', 'u', 'u'
+                                , "us", "uf", "ur", "ux", "uj"
+                                , "uw"
+                                , "uws", "uwf", "uwr", "uwx", "uwj"
 
-                                , 'i', 'i', 'i', 'i', 'i'
+                                , "is", "if", "ir", "ix", "ij"
 
-                                , 'o', 'o', 'o', 'o', 'o'
-                                , 'o', 'o'
-                                , 'o', 'o', 'o', 'o', 'o'
-                                , 'o', 'o', 'o', 'o', 'o'
+                                , "os", "of", "or", "ox", "oj"
+                                , "oo", "ow"
+                                , "oos", "oof", "oor", "oox", "ooj"
+                                , "ows", "owf", "owr", "owx", "owj"
 
-                                , 'd'
+                                , "dd"
                              };
-
             for (int i = 0; i < cAccents.Length; i++)
             {
-                sText = sText.Replace(cAccents[i], cReplace[i]);
+                sText = sText.Replace(cAccents[i].ToString(), cReplace[i]);
             }
             return sText;
         }
