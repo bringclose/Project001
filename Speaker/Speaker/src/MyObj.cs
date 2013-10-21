@@ -9,10 +9,10 @@ namespace Speaker.src
 {
     public class MyObj
     {
-        private int intMyObjKey;
+        private long intMyObjKey;
         private string myData;
 
-        public int Key
+        public long Key
         {
             get
             {
@@ -37,7 +37,7 @@ namespace Speaker.src
             }
         }
 
-        public MyObj(int key, string data)
+        public MyObj(long key, string data)
         {
             this.Key = key;
             this.Data = data;

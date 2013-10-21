@@ -7,8 +7,8 @@ namespace Speaker.src
 {
     public class MyKey : IComparable
     {
-        private int intMyKey;
-        public int Key
+        private long intMyKey;
+        public long Key
         {
             get
             {
@@ -21,7 +21,7 @@ namespace Speaker.src
             }
         }
 
-        public MyKey(int key)
+        public MyKey(long key)
         {
             intMyKey = key;
         }

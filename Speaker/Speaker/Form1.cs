@@ -51,7 +51,7 @@ namespace Speaker
             string test = "Nguyễn Việt Hùng, Lưu Anh Hùng, ồ ớ đừng, lệnh bắt";
             System.Console.WriteLine("Contents of WriteText.txt = {0}", Speaker.src.Text.sReplaceUTF8(test));
 
-            test = Speaker.src.Text.sUpcase(test);
+            test = Speaker.src.Text.sUpcase(Speaker.src.Text.sReplaceUTF8(test));
             System.Console.WriteLine("Contents of WriteText.txt = {0}", test);
 
 
@@ -151,10 +151,92 @@ namespace Speaker
                 Console.ReadLine();
             }
             */
-            int i = 72;
-            char c = Convert.ToChar(i);
-            
-            Console.WriteLine(c);
+            //a
+            MyObj _a = new MyObj(01, "a");
+                MyObj _aa = new MyObj(101, "aa");
+                    MyObj _aas = new MyObj(10101, "aas");
+                    MyObj _aaf = new MyObj(10102, "aaf");
+                    MyObj _aar = new MyObj(10103, "aar");
+                    MyObj _aax = new MyObj(10104, "aax");
+                    MyObj _aaj = new MyObj(10105, "aaj");
+                    MyObj _aac = new MyObj(10106, "aac");
+                    MyObj _aam = new MyObj(10107, "aam");
+                    MyObj _aan = new MyObj(10108, "aan");
+                    MyObj _aao = new MyObj(10109, "aao");
+                    MyObj _aap = new MyObj(10110, "aap");
+                    MyObj _aat = new MyObj(10111, "aat");
+                    MyObj _aau = new MyObj(10112, "aau");
+                    MyObj _aay = new MyObj(10113, "aay");
+                MyObj _aw = new MyObj(102, "aw");
+                MyObj _as = new MyObj(103, "as");
+                MyObj _af = new MyObj(104, "af");
+                MyObj _ar = new MyObj(105, "ar");
+                MyObj _ax = new MyObj(106, "ax");
+                MyObj _aj = new MyObj(107, "aj");
+                MyObj _ac = new MyObj(108, "ac");
+                MyObj _ai = new MyObj(109, "ai");
+                MyObj _am = new MyObj(110, "am");
+                MyObj _an = new MyObj(111, "an");
+                MyObj _ao = new MyObj(112, "ao");
+                MyObj _ap = new MyObj(113, "ap");
+                MyObj _at = new MyObj(114, "at");
+                MyObj _au = new MyObj(115, "au");
+                MyObj _ay = new MyObj(116, "ay");
+
+            //TODO
+
+            //t
+            MyObj _t = new MyObj(20, "t");
+                MyObj _th = new MyObj(2001, "th");
+                MyObj _tr = new MyObj(2002, "tr");
+
+            try
+            {
+                //a	
+                redBlack.Add(new MyKey(_a.Key), _a);
+                    redBlack.Add(new MyKey(_aa.Key), _aa);
+                        redBlack.Add(new MyKey(_aas.Key), _aas);
+                        redBlack.Add(new MyKey(_aaf.Key), _aaf);
+                        redBlack.Add(new MyKey(_aar.Key), _aar);
+                        redBlack.Add(new MyKey(_aax.Key), _aax);
+                        redBlack.Add(new MyKey(_aaj.Key), _aaj);
+                        redBlack.Add(new MyKey(_aac.Key), _aac);
+                        redBlack.Add(new MyKey(_aam.Key), _aam);
+                        redBlack.Add(new MyKey(_aan.Key), _aan);
+                        redBlack.Add(new MyKey(_aao.Key), _aao);
+                        redBlack.Add(new MyKey(_aap.Key), _aap);
+                        redBlack.Add(new MyKey(_aat.Key), _aat);
+                        redBlack.Add(new MyKey(_aau.Key), _aau);
+                        redBlack.Add(new MyKey(_aay.Key), _aay);
+                    redBlack.Add(new MyKey(_aw.Key), _aw);
+                    redBlack.Add(new MyKey(_as.Key), _as);
+                    redBlack.Add(new MyKey(_af.Key), _af);
+                    redBlack.Add(new MyKey(_ar.Key), _ar);
+                    redBlack.Add(new MyKey(_ax.Key), _ax);
+                    redBlack.Add(new MyKey(_aj.Key), _aj);
+                    redBlack.Add(new MyKey(_ac.Key), _ac);
+                    redBlack.Add(new MyKey(_ai.Key), _ai);
+                    redBlack.Add(new MyKey(_am.Key), _am);
+                    redBlack.Add(new MyKey(_an.Key), _an);
+                    redBlack.Add(new MyKey(_ao.Key), _ao);
+                    redBlack.Add(new MyKey(_ap.Key), _ap);
+                    redBlack.Add(new MyKey(_at.Key), _at);
+                    redBlack.Add(new MyKey(_au.Key), _au);
+                    redBlack.Add(new MyKey(_ay.Key), _ay);
+
+                //t	
+                redBlack.Add(new MyKey(_t.Key), _t);
+                redBlack.Add(new MyKey(_th.Key), _th);
+                redBlack.Add(new MyKey(_tr.Key), _tr);
+
+                TraverseEnumerator();
+                Console.WriteLine(Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Wrong");
+            }
         }
 
         public static void DumpRedBlack(bool boolDesc)
