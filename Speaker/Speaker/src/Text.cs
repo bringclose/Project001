@@ -117,11 +117,17 @@ namespace Speaker.src
                 {
                     char c = Convert.ToChar((sText[i] + 32));
                     sReturn = sReturn + c;
+                    for (int j = 0; i < 10; j++)
+                    {
+                        if (j == 1)
+                            break;
+                    }
                 }
                 else
                 {
                     sReturn = sReturn + sText[i];
                 }
+                Console.WriteLine("Max MyObj key: ");
             }
             return sReturn;/*sText.ToLower();*/
         }
