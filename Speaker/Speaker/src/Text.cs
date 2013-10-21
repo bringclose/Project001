@@ -109,17 +109,21 @@ namespace Speaker.src
 
         public static string sUpcase(string sText)
         {
-            //int iLeng = sText.Length;
-            //string sReturn = "";
-            //for (int i = 0; i < iLeng; i++)
-            //{
-            //    if (sText[i] >= 'A' && sText[i] <= 'Z')
-            //    {
-            //        char a = (sText[i] + 32);
-            //        sReturn = sReturn + (sText[i] + 32); 
-            //    }
-            //}
-            return sText.ToLower();
+            int iLeng = sText.Length;
+            string sReturn = "";
+            for (int i = 0; i < iLeng; i++)
+            {
+                if (sText[i] >= 'A' && sText[i] <= 'Z')
+                {
+                    char c = Convert.ToChar((sText[i] + 32));
+                    sReturn = sReturn + c;
+                }
+                else
+                {
+                    sReturn = sReturn + sText[i];
+                }
+            }
+            return sReturn;/*sText.ToLower();*/
         }
     }
 }

@@ -48,14 +48,15 @@ namespace Speaker
             //System.Console.WriteLine("Contents of WriteText.txt = {0}", stmp1);
 
 
-            //string test = "Nguyễn Việt Hùng, Lưu Anh Hùng, ồ ớ đừng, lệnh bắt";
-            //System.Console.WriteLine("Contents of WriteText.txt = {0}", Speaker.src.Text.sReplaceUTF8(test));
+            string test = "Nguyễn Việt Hùng, Lưu Anh Hùng, ồ ớ đừng, lệnh bắt";
+            System.Console.WriteLine("Contents of WriteText.txt = {0}", Speaker.src.Text.sReplaceUTF8(test));
 
-            //test = Speaker.src.Text.sUpcase(test);
-            //System.Console.WriteLine("Contents of WriteText.txt = {0}", test);
+            test = Speaker.src.Text.sUpcase(test);
+            System.Console.WriteLine("Contents of WriteText.txt = {0}", test);
 
 
             // create MyObjs containing key and string data
+            /*
             MyObj obj1 = new MyObj(0001, "MyObj 1");
             MyObj obj2 = new MyObj(0002, "MyObj 2");
             MyObj obj3 = new MyObj(0003, "MyObj 3");
@@ -149,6 +150,11 @@ namespace Speaker
                 Console.WriteLine("Press enter to terminate");
                 Console.ReadLine();
             }
+            */
+            int i = 72;
+            char c = Convert.ToChar(i);
+            
+            Console.WriteLine(c);
         }
 
         public static void DumpRedBlack(bool boolDesc)
