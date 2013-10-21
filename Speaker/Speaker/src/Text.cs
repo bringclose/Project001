@@ -106,5 +106,20 @@ namespace Speaker.src
             }
             return sText;
         }
+
+        public static string sUpcase(string sText)
+        {
+            //int iLeng = sText.Length;
+            //string sReturn = "";
+            //for (int i = 0; i < iLeng; i++)
+            //{
+            //    if (sText[i] >= 'A' && sText[i] <= 'Z')
+            //    {
+            //        char a = (sText[i] + 32);
+            //        sReturn = sReturn + (sText[i] + 32); 
+            //    }
+            //}
+            return sText.ToLower();
+        }
     }
 }
