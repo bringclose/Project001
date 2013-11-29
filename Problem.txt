@@ -1,0 +1,4 @@
+How to load multi file and play, free memory ?
+How to setting frequency (how many heiz) ?
+
+Create some example for this project !
