@@ -23,6 +23,7 @@ namespace Speaker
         public Form1()
         {
             InitializeComponent();
+            txtInPut.Text = "Trường Tôn Đức Thắng, Tôn Đức Thắng. Tôn Đức Thắng! buồn ngủ quá tụi mày ơi";
         }
         public static int TextToNumber(string text)
         {
@@ -300,14 +301,17 @@ namespace Speaker
             WaveLib.WaveData data = new WaveLib.WaveData(2, duration, overlap, "media\\tr.wav", "media\\uwowfng.wav");
 
             List<string> list = new List<string>();
-            string testk = "Trường Tôn Đức Thắng, Tôn Đức Thắng. Tôn Đức Thắng!";
+            string testk = "Trường Tôn Đức Thắng, Tôn Đức Thắng. Tôn Đức Thắng! buồn ngủ quá tụi mày ơi";
+            testk = txtInPut.Text;
             testk = Speaker.src.Text.sUpcase(Speaker.src.Text.sReplaceUTF8(testk));
             list = Speaker.src.Text.GetListString(testk);
             foreach (string value in list)
             {
                 Console.WriteLine(value);
-                string sFirst = "media\\" + Speaker.src.Text.GetFirstText(value) + ".wav";
-                string sSecond = "media\\" + Speaker.src.Text.GetSecondText(value) + ".wav";
+                string sFirst = "test\\" + Speaker.src.Text.GetFirstText(value) + ".wav";
+                string sSecond = "test\\" + Speaker.src.Text.GetSecondText(value) + ".wav";
+                Console.WriteLine("----------sFirst" + File.Exists(sFirst));
+                Console.WriteLine("----------sSecond" + File.Exists(sSecond));
                 if (Speaker.src.Text.CheckTextSD(value) == 1)
                 {
                     data.SetData(1, duration, overlap, sSecond, "");
