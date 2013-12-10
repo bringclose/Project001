@@ -263,10 +263,18 @@ namespace Speaker
                 Console.WriteLine("----------sSecond" + File.Exists(sSecond));
                 if (Speaker.src.Text.CheckTextSD(value) == 1)
                 {
+                    if (!File.Exists(sSecond))
+                    {
+                        continue;
+                    }
                     data.SetData(1, duration, overlap, sSecond, "");
                 }
                 else if (Speaker.src.Text.CheckTextSD(value) == 2)
                 {
+                    if (!File.Exists(sSecond) || !File.Exists(sFirst))
+                    {
+                        continue;
+                    }
                     data.SetData(2, duration, overlap, sFirst, sSecond);
                 }
                 else if (Speaker.src.Text.CheckTextSD(value) == 3)
