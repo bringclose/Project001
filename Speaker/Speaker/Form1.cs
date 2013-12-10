@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 using Speaker1;
 using Speaker.src;
-using RedBlackTree;
 using System.Collections;
 using System.IO;
 
@@ -18,7 +17,6 @@ namespace Speaker
 {
     public partial class Form1 : Form
     {
-        static RedBlack redBlack = new RedBlack();
 
         public Form1()
         {
@@ -113,55 +111,6 @@ namespace Speaker
                 Console.WriteLine(value);
             }
             
-        }
-
-        public static void DumpRedBlack(bool boolDesc)
-        {
-            // returns keys only
-            RedBlackEnumerator k = redBlack.Keys(boolDesc);
-            // returns data only, in this case, MyObjs
-            RedBlackEnumerator e = redBlack.Elements(boolDesc);
-
-            if (boolDesc)
-                Console.WriteLine("** Dumping RedBlack: Ascending **");
-            else
-                Console.WriteLine("** Dumping RedBlack: Descending **");
-
-            Console.WriteLine("RedBlack Size: " + redBlack.Size().ToString() + Environment.NewLine);
-
-            Console.WriteLine("- keys -");
-            while (k.HasMoreElements())
-                Console.WriteLine(k.NextElement());
-
-            Console.WriteLine("- my objects -");
-            MyObj cmmMyObj;
-            while (e.HasMoreElements())
-            {
-                cmmMyObj = ((MyObj)(e.NextElement()));
-                Console.Write("Key:" + cmmMyObj.ToString());
-                Console.WriteLine(" Data:" + cmmMyObj.Data);
-            }
-
-        }
-        public static void TraverseEnumerator()
-        {
-            Console.WriteLine("** Traversing using Enumerator **");
-            Console.WriteLine(Environment.NewLine);
-
-            RedBlackEnumerator myEnumerator = redBlack.GetEnumerator();
-
-            while (myEnumerator.MoveNext())
-                Console.WriteLine("Key:{0}\t" + "  Data:{1}\t" + " Color:{2}\t" + " Parent Key:{3}",
-                    myEnumerator.Key, ((MyObj)myEnumerator.Value).Data, myEnumerator.Color, myEnumerator.parentKey);
-
-        }
-        public static void DumpMinMaxValue()
-        {
-            Console.WriteLine("** Dumping Min/Max Values  **");
-            Console.WriteLine("Min MyObj value: " + ((MyObj)redBlack.GetMinValue()).Data);
-            Console.WriteLine("Max MyObj value: " + ((MyObj)redBlack.GetMaxValue()).Data);
-            Console.WriteLine("Min MyObj key: " + ((MyKey)redBlack.GetMinKey()).ToString());
-            Console.WriteLine("Max MyObj key: " + ((MyKey)redBlack.GetMaxKey()).ToString());
         }
 
         public static List<string> GetListString(Hashtable hashtable, string sText)

@@ -295,6 +295,12 @@ namespace Speaker.src
                     || sText[i] == 'y'
                     || sText[i] == 'i')
                 {
+                    if (    (i > 0)
+                            && ((sText[i - 1] == 'q' && sText[i] == 'u')
+                            || (sText[i - 1] == 'g' && sText[i] == 'i')))
+                    {
+                        sReturn = sReturn + sText[i];
+                    }
                     break;
                 }
                 else
@@ -307,13 +313,26 @@ namespace Speaker.src
 
         public static string GetSecondText(string sText)
         {
+            string sReplace = "";
             if (CheckTextSD(sText) == 1)
             {
                 return sText;
             }
             else
             {
-                return sText.Replace(GetFirstText(sText), "");
+                if (GetFirstText(sText) == "gi")
+                {
+                    sReplace = "g";
+                }
+                //else if (GetFirstText(sText) == "qu")
+                //{
+                //    sReplace = "q";
+                //}
+                else
+                { 
+                    sReplace = GetFirstText(sText);
+                }
+                return sText.Replace(sReplace, "");
             }
         }
     }
