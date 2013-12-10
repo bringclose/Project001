@@ -249,6 +249,9 @@ namespace Speaker
             WaveLib.WavePlayer player = new WaveLib.WavePlayer();
             WaveLib.WaveData data = new WaveLib.WaveData(2, duration, overlap, "media\\tr.wav", "media\\uwowfng.wav");
 
+            WaveLib.WavePlayer player2 = new WaveLib.WavePlayer();
+            WaveLib.WaveData data2 = new WaveLib.WaveData(2, duration, overlap, "media\\tr.wav", "media\\uwowfng.wav");
+
             List<string> list = new List<string>();
             string testk = "Trường Tôn Đức Thắng, Tôn Đức Thắng. Tôn Đức Thắng! buồn ngủ quá tụi mày ơi";
             testk = txtInPut.Text;
@@ -257,8 +260,8 @@ namespace Speaker
             foreach (string value in list)
             {
                 Console.WriteLine(value);
-                string sFirst = "test\\" + Speaker.src.Text.GetFirstText(value) + ".wav";
-                string sSecond = "test\\" + Speaker.src.Text.GetSecondText(value) + ".wav";
+                string sFirst = "media\\" + Speaker.src.Text.GetFirstText(value) + ".wav";
+                string sSecond = "media\\" + Speaker.src.Text.GetSecondText(value) + ".wav";
                 Console.WriteLine("----------sFirst" + File.Exists(sFirst));
                 Console.WriteLine("----------sSecond" + File.Exists(sSecond));
                 if (Speaker.src.Text.CheckTextSD(value) == 1)
@@ -294,7 +297,15 @@ namespace Speaker
                     data.SetData(0, 400, overlap, "", "");
                 }
 
+                //speaking text
                 player.playWave(data);
+
+                //delay speaking text
+                data2.SetData(0, 200, overlap, "", "");
+                player2.playWave(data2);
+
+                //Close file
+                player2.CloseFile();
                 player.CloseFile();
             }
             
