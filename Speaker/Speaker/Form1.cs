@@ -210,8 +210,8 @@ namespace Speaker
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int duration = 300;
-            int overlap = 0;
+            int duration = 350;
+            int overlap = 10;
 
             //WaveLib.WavePlayer player = new WaveLib.WavePlayer();
             //WaveLib.WaveData data = new WaveLib.WaveData(2, duration, overlap, "media\\tr.wav", "media\\uwowfng.wav");
