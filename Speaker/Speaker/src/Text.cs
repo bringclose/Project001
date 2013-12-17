@@ -324,10 +324,10 @@ namespace Speaker.src
                 {
                     sReplace = "g";
                 }
-                //else if (GetFirstText(sText) == "qu")
-                //{
-                //    sReplace = "q";
-                //}
+                else if (GetFirstText(sText) == "qu")
+                {
+                    sReplace = "q";
+                }
                 else
                 { 
                     sReplace = GetFirstText(sText);
